@@ -18,7 +18,7 @@ class CreatePatientsTable extends Migration
             $table->string('first_Name');
             $table->string('last_Name');
             $table->date('DOB');
-            $table->integer('division_id');
+            $table->integer('division_id')->nullable();
             $table->timestamps();
         });
     }
