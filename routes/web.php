@@ -17,4 +17,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/imisuhis', function () {
+    $patients = \App\patient::paginate(20);
+    return view('imisuhis.index')->with(['patients'=>$patients]);
+});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
 Route::get('/home', 'HomeController@index')->name('home');
