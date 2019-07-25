@@ -21,7 +21,9 @@
             <td>{{$patient->first_Name}}</td>
             <td>{{$patient->last_Name}}</td>
             <td>{{$patient->DOB}}</td>
-            <td>{{$patient->division_id}}</td>
+            <td>{{$patient->div_name}}</td>
+            <td>{{$patient->treatments}}</td>
+            <td>{{$patient->treatment_date}}</td>
         </tr>
         @endforeach
     </tbody>

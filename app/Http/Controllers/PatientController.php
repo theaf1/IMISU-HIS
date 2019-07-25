@@ -46,7 +46,12 @@ class PatientController extends Controller
      */
     public function show(Patient $patient)
     {
-        //
+        $patients = db::table('patients')
+            ->join('treatments', 'treatments.name', '=', 'patients.treatments')
+            ->join('treatments', 'treatments.created_at', '=', 'patients.treatment_date')
+            ->join('divisions', 'divisions.name', '=', 'patients.div_name')
+            ->select('patients', 'patients.treatments', 'patients.treatment_date')
+            ->get();
     }
 
     /**
