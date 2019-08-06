@@ -44,16 +44,21 @@ class PatientController extends Controller
      * @param  \App\Patient  $patient
      * @return \Illuminate\Http\Response
      */
-    public function show(Patient $patient)
+    public function divisions(){
+        return $this->belongsTo(Divisions::class);
+    }
+    public function treatments(){
+        return $this->hasMany(Treatments::class);
+    }
+     public function show(Patient $patient)
     {
         $patients = db::table('patients')
             ->join('treatments', 'treatments.name', '=', 'patients.treatments')
             ->join('treatments', 'treatments.created_at', '=', 'patients.treatment_date')
             ->join('divisions', 'divisions.name', '=', 'patients.div_name')
-            ->select('patients', 'patients.treatments', 'patients.treatment_date')
+            ->select('patients', 'patients.div_name', 'patients.treatments', 'patients.treatment_date')
             ->get();
     }
-
     /**
      * Show the form for editing the specified resource.
      *

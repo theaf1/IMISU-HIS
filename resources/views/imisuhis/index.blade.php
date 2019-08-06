@@ -18,12 +18,11 @@
         @foreach($patients as $patient)
         <tr>
             <td>{{$patient->id}}</td>
-            <td>{{$patient->first_Name}}</td>
-            <td>{{$patient->last_Name}}</td>
+            <td>{{$patient->first_Name}}</td><td>{{$patient->last_Name}}</td>
             <td>{{$patient->DOB}}</td>
             <td>{{$patient->div_name}}</td>
             <td>{{$patient->treatments}}</td>
-            <td>{{$patient->treatment_date}}</td>
+            <!-- <td>{{$patient->treatment_date}}</td> -->
         </tr>
         @endforeach
     </tbody>

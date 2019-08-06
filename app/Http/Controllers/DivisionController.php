@@ -16,7 +16,9 @@ class DivisionController extends Controller
     {
         //
     }
-
+    public function patients(){
+        return $this->hasMany(Patients::class);
+    }
     /**
      * Show the form for creating a new resource.
      *

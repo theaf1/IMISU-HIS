@@ -16,7 +16,9 @@ class TreatmentController extends Controller
     {
         //
     }
-
+public function patient(){
+    return $this->hasMany(Treatments::class);
+}
     /**
      * Show the form for creating a new resource.
      *
